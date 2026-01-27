@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive GIF Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #ffffff;
+      color: #000000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      text-align: center;
+      max-width: 500px;
+      padding: 1rem;
+    }
+
+    .prompt-text {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      line-height: 1.4;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 1.2rem;
+    }
+
+    .buttons {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      height: 60px;
+    }
+
+    button {
+      font-size: 1rem;
+      padding: 0.6rem 1.4rem;
+      cursor: pointer;
+      border: none;
+      border-radius: 6px;
+      color: #ffffff;
+    }
+
+    button:focus {
+      outline: 3px solid #005fcc;
+    }
+
+    #yesButton {
+      background-color: #c62828; /* red */
+      transition: transform 0.2s ease;
+    }
+
+    #noButton {
+      background-color: #1565c0; /* blue */
+      transition: transform 0.2s ease;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <p class="prompt-text">
+      Would you be my valentine? (or someone you hangout the day after).
+    </p>
+
+    <img src="In Love Kiss GIF.gif" alt="Deers in love" />
+
+    <div class="buttons">
+      <button id="yesButton">Yes</button>
+      <button id="noButton">No</button>
+    </div>
+  </main>
+
+  <script>
+    const yesButton = document.getElementById('yesButton');
+    const noButton = document.getElementById('noButton');
+
+    let scale = 1;
+
+    yesButton.addEventListener('click', () => {
+      alert('15 de Febrero, 3:15pm, volves tarde');
+    });
+
+    noButton.addEventListener('click', () => {
+      scale += 0.2;
+      yesButton.style.transform = `scale(${scale})`;
+
+      const offset = (scale - 1) * 60;
+      noButton.style.transform = `translateX(${offset}px)`;
+    });
+  </script>
+</body>
+</html>
